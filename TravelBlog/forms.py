@@ -11,7 +11,7 @@ for item in paises:
 class FormularioPost(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('titulo', 'autor', 'categorias', 'cuerpo')
+        fields = ('titulo', 'autor', 'categorias', 'cuerpo', 'imagen')
         widgets = {
             'titulo': forms.TextInput(attrs={'class':'form-control'}),
             'autor': forms.TextInput(attrs={'class':'form-control','value':'','id':'usuario','type':'hidden'}),

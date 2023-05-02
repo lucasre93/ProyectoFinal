@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block titulo %}
+Sobre mí
+{% endblock %}
+
+
+{% block contenido_cambia %}
+<h1>Sobre mi</h1>
+<br/>
+Hola! Mi nombre es Lucas Rellip y soy el creador de este Blog. Tengo actualmente 29 años y me dedico a trabajar como Contador
+Público de forma independiente, además que soy docente del "Diplomoado en Especialista en informática con orientación de gestión"
+en la fundación ILADES ubicada en la provincia de Tucumán desde el año 2022.
+He trabajo para empresas como E&Y como asistente de auditoría externa y también en estudios contables como Marchese, Grandi & Mesón.
+Espero que te guste mi proyecto y puedas sumar tus experiencias como viajero!
+<br/>
+<br><br/>
+<a href = "{% url 'home' %}" class="btn btn-secondary">Volver</a>
+
+{% endblock %}
