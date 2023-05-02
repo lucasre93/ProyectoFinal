@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block titulo %}
+Agregar un nuevo pais
+{% endblock %}
+{% block contenido_cambia %}
+{% if user.is_authenticated %}
+    <h1>Agregar un nuevo pais</h1>
+
+    <br><br/>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Agregar Pais</button>
+    </div>
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById("usuario").value = name;
+
+    </script>
+{% else %}
+    Usted debe loguearse para crear una categoria
+{% endif %}
+{% endblock %}

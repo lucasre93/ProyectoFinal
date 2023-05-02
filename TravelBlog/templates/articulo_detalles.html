@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block titulo %}
+{{ post.titulo }}
+{% endblock %}
+
+
+{% block contenido_cambia %}
+<h1>{{ post.titulo }}</h1>
+<small> Escrito por: {{ post.autor.first_name }} {{ post.autor.last_name }} - {{ post.fechapost }} -
+    {% if user.is_authenticated %}
+        {% if user.id == post.autor.id %}
+        <a href="{% url 'editarpost' post.pk %}">Editar<a/> -
+        <a href="{% url 'eliminarpost' post.pk %}">Eliminar<a/>
+        {% endif %}
+<br/>
+    {% endif %}
+<hr>
+<br/>
+
+{{ post.cuerpo | safe }}
+
+<br><br/>
+<a href = "{% url 'home' %}" class="btn btn-secondary">Volver</a>
+
+{% endblock %}
