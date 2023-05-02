@@ -20,6 +20,7 @@ class Post(models.Model):
     cuerpo = models.TextField()
     fechapost = models.DateField(auto_now_add=True)
     categorias = models.CharField(max_length= 50, default='Otros')
+    imagen = models.ImageField(null=True, blank=True, upload_to = "imagenes/")
 
     def __str__(self):
         return self.titulo + ' | ' + str(self.autor)

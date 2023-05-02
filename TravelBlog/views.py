@@ -67,3 +67,6 @@ class AgregarCategoria(CreateView):
 def VistaCategoria(request, categ):
     categorias_post = Post.objects.filter(categorias=categ)
     return render(request, 'categorias.html', {'categ':categ, 'categorias_post': categorias_post})
+
+def AboutMe(request):
+    return render(request, 'aboutme.html')
